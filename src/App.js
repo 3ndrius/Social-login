@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
+import Data from './components/Data'
+import Welcome from './components/Welcome';
 
 firebase.initializeApp({
   apiKey: "AIzaSyAjv_IqtZ3Ts2Cagz5wnBcwFv_du4zgUxM",
@@ -59,6 +61,8 @@ export default class App extends Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard/welcome" component={Welcome} />
+        <Route path="/dashboard/data" component={Data} />
       </Switch>
       </BrowserRouter>
     )
