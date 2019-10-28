@@ -9,8 +9,7 @@ import Data from './components/Data'
 import Welcome from './components/Welcome';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyAjv_IqtZ3Ts2Cagz5wnBcwFv_du4zgUxM",
-  authDomain: "social-login-react-29e10.firebaseapp.com"
+
 })
 
 export default class App extends Component {
