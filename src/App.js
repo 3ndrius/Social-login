@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-
-import firebase from 'firebase';
 import StyledFirebaseAuth  from 'react-firebaseui/StyledFirebaseAuth'
+import firebase from 'firebase';
+import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
+
+import Dashboard from './components/Dashboard';
+import Home from './components/Home';
+
 firebase.initializeApp({
-  // apiKey:
-  // authDomain: 
+  apiKey: "AIzaSyAjv_IqtZ3Ts2Cagz5wnBcwFv_du4zgUxM",
+  authDomain: "social-login-react-29e10.firebaseapp.com"
 })
 
 export default class App extends Component {
@@ -31,20 +35,32 @@ export default class App extends Component {
   }
   render() {
     return (
+      <BrowserRouter>
+      <header>
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
+      </ul>
       <div className="App">
         {this.state.isSignIn ? 
        <React.Fragment>
           <p>Signed In</p> 
         <button onClick={()=> firebase.auth().signOut()}>SignOut</button> 
-        <h1>Welcome {firebase.auth().currentUser.displayName} </h1>
+        <h1>Welcome </h1>
        </React.Fragment>
         :
-       <StyledFirebaseAuth
-          uiConfig={this.uiConfig}
-          firebaseAuth={firebase.auth()}
-       />
+        <StyledFirebaseAuth
+        uiConfig={this.uiConfig}
+        firebaseAuth={firebase.auth()}
+      />
       }
       </div>
+      </header>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/dashboard" component={Dashboard} />
+      </Switch>
+      </BrowserRouter>
     )
   }
 }
