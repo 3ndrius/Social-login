@@ -45,8 +45,11 @@ class AuthContextProvider extends Component {
       <BrowserRouter>
         <AuthContext.Provider value={{ isSignIn: this.state.isSignIn }}>
           <header className="app-header">
+            <div className="app-header__logo">
+              <img src="https://www.freepnglogos.com/uploads/netflix-logo-circle-png-5.png" alt="logo"/>
+            </div>
          <nav className="app-header__nav">
-         <ul>
+         <ul className="app-header__list">
               <li>
                 <Link to="/">Home</Link>
                 </li>
@@ -67,10 +70,13 @@ class AuthContextProvider extends Component {
                   </button>{" "}
                 </li>
               ) : (
-               this.state.signInButton && <StyledFirebaseAuth
+               this.state.signInButton && 
+               <div className="overlay">
+                 <StyledFirebaseAuth
                   uiConfig={this.uiConfig}
                   firebaseAuth={firebase.auth()}
                 />
+               </div>
               )}
             </ul>
          </nav>

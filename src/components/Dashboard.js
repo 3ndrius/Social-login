@@ -12,9 +12,9 @@ export default class Dashboard extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Dashboard component protected</h1>
-        <ul>
+      <div className="dashboard">
+      <aside className="dashboard-nav">
+      <ul className="dashboard-nav__list">
           <li>
             <Link to="/dashboard">Welcome</Link>
           </li>
@@ -25,6 +25,9 @@ export default class Dashboard extends Component {
             <Link to="/dashboard/contact">Contact</Link>
           </li>
         </ul>
+      </aside>
+      <section className="dashboard__content">
+      
         {this.context.isSignIn ? (
           <Route path="/dashboard/" exact component={Welcome} />
         ) : (
@@ -40,6 +43,7 @@ export default class Dashboard extends Component {
         ) : (
           ""
         )}
+        </section>
       </div>
     );
   }
