@@ -7,12 +7,14 @@ import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
 
 firebase.initializeApp({
- 
+  apiKey: process.env.REACT_APP_AUTH_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN
 });
 
 class AuthContextProvider extends Component {
   state = {
-    isSignIn: false
+    isSignIn: false,
+    signInButton: false
   };
   uiConfig = {
     signInFlow: "popup",
@@ -30,34 +32,48 @@ class AuthContextProvider extends Component {
       this.setState({ isSignIn: !!user });
     });
   };
+  signOut = () => {
+    firebase.auth().signOut();
+    this.setState({
+      signInButton: false
+    })
+  }
   render() {
+
     return (
+      
       <BrowserRouter>
         <AuthContext.Provider value={{ isSignIn: this.state.isSignIn }}>
-          <header>
-            <ul>
+          <header className="app-header">
+         <nav className="app-header__nav">
+         <ul>
               <li>
                 <Link to="/">Home</Link>
-              </li>
+                </li>
+      
+               { !this.state.isSignIn  && <li onClick={() => this.setState({signInButton:!this.state.signInButton})}>Login</li>} 
+        
               {this.state.isSignIn && (
                 <li>
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
+              
               )}
               {this.state.isSignIn ? (
                 <li>
                   {" "}
-                  <button onClick={() => firebase.auth().signOut()}>
+                  <button onClick={this.signOut}>
                     SignOut
                   </button>{" "}
                 </li>
               ) : (
-                <StyledFirebaseAuth
+               this.state.signInButton && <StyledFirebaseAuth
                   uiConfig={this.uiConfig}
                   firebaseAuth={firebase.auth()}
                 />
               )}
             </ul>
+         </nav>
           </header>
           <Switch>
             <Route exact path="/" component={Home} />
