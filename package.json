@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^7.2.1",
+    "node-sass": "^4.13.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-firebaseui": "^4.0.0",
@@ -31,7 +32,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "dotenv": "^8.2.0"
-  }
+  "devDependencies": {}
 }
