@@ -46,7 +46,9 @@ class AuthContextProvider extends Component {
         <AuthContext.Provider value={{ isSignIn: this.state.isSignIn }}>
           <header className="app-header">
             <div className="app-header__logo">
+            
               <img src="https://www.freepnglogos.com/uploads/netflix-logo-circle-png-5.png" alt="logo"/>
+              <p>NETFLIX</p>
             </div>
          <nav className="app-header__nav">
          <ul className="app-header__list">
@@ -65,7 +67,7 @@ class AuthContextProvider extends Component {
               {this.state.isSignIn ? (
                 <li>
                   {" "}
-                  <button onClick={this.signOut}>
+                  <button className="btn" onClick={this.signOut}>
                     SignOut
                   </button>{" "}
                 </li>

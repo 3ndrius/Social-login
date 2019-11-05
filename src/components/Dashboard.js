@@ -16,13 +16,29 @@ export default class Dashboard extends Component {
       <aside className="dashboard-nav">
       <ul className="dashboard-nav__list">
           <li>
-            <Link to="/dashboard">Welcome</Link>
+            <Link to="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <Link to="/dashboard/data">Data</Link>
+            <Link to="/dashboard/data">User</Link>
           </li>
           <li>
-            <Link to="/dashboard/contact">Contact</Link>
+            <Link to="/dashboard/contact">Stared</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/contact">Account</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/contact">Summary</Link>
+          </li>
+        </ul >
+
+    <hr className="hr"/>
+        <ul>
+        <li>
+            <Link to="/dashboard/contact">Layout</Link>
+          </li>
+        <li>
+            <Link to="/dashboard/contact">Settings</Link>
           </li>
         </ul>
       </aside>
