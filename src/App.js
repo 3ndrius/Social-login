@@ -6,6 +6,13 @@ import AuthContext from "./contexts/AuthContext";
 import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
 
+import {
+  faHome,
+  faTh,
+ 
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_AUTH_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN
@@ -53,14 +60,14 @@ class AuthContextProvider extends Component {
          <nav className="app-header__nav">
          <ul className="app-header__list">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/"><FontAwesomeIcon icon={faHome} /></Link>
                 </li>
       
-               { !this.state.isSignIn  && <li onClick={() => this.setState({signInButton:!this.state.signInButton})}>Login</li>} 
+               { !this.state.isSignIn  && <li><button onClick={() => this.setState({signInButton:!this.state.signInButton})} className="btn">Login / Register</button></li>} 
         
               {this.state.isSignIn && (
                 <li>
-                  <Link to="/dashboard">Dashboard</Link>
+                  <Link to="/dashboard"><FontAwesomeIcon icon={faTh} /></Link>
                 </li>
               
               )}

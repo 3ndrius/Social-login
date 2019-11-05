@@ -5,6 +5,18 @@ import Data from "./Data";
 import Welcome from "./Welcome";
 import Contact from "./Contact";
 
+import {
+  faHome,
+  faTh,
+  faLayerGroup,
+  faUser,
+  faTags,
+  faChartLine,
+  faCog,
+  faFire
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import AuthContext from "../contexts/AuthContext";
 
 export default class Dashboard extends Component {
@@ -15,29 +27,29 @@ export default class Dashboard extends Component {
       <div className="dashboard">
       <aside className="dashboard-nav">
       <ul className="dashboard-nav__list">
-          <li>
+          <li><FontAwesomeIcon icon={faTh} />
             <Link to="/dashboard">Dashboard</Link>
           </li>
-          <li>
+          <li><FontAwesomeIcon icon={faUser} />
             <Link to="/dashboard/data">User</Link>
           </li>
-          <li>
-            <Link to="/dashboard/contact">Stared</Link>
+          <li><FontAwesomeIcon icon={faTags} />
+            <Link to="/dashboard/contact">Tags</Link>
           </li>
-          <li>
+          <li><FontAwesomeIcon icon={faFire} />
             <Link to="/dashboard/contact">Account</Link>
           </li>
-          <li>
+          <li><FontAwesomeIcon icon={faChartLine} />
             <Link to="/dashboard/contact">Summary</Link>
           </li>
         </ul >
 
     <hr className="hr"/>
         <ul>
-        <li>
+        <li><FontAwesomeIcon icon={faLayerGroup} />
             <Link to="/dashboard/contact">Layout</Link>
           </li>
-        <li>
+        <li><FontAwesomeIcon icon={faCog} />
             <Link to="/dashboard/contact">Settings</Link>
           </li>
         </ul>
