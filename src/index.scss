@@ -39,12 +39,27 @@ a{
     display: flex;
     align-items: center;
     height: 100%;
-    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
     border-bottom: 1px solid $clr-02;
     img{
         width: 50px;
         height: auto;
         margin:0 20px;
+    }
+}
+.app-header__logo--mini{
+    width:80px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid $clr-02;
+    img{
+        width: 50px;
+        height: auto;
+        margin:0 10px;
+    }
+    p{
+        display: none;
     }
 }
 .overlay{
@@ -63,7 +78,24 @@ box-shadow: 0px 0px 100px 1200px rgba(0,0,0,0.75);
 }
 
 // dashboard 
-
+.dashboard-mini{
+    display: grid;
+    background:$clr-02;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: minmax(calc(100vh - 100px), 1fr);
+    grid-column-gap: 10px;
+    color:$clr-03;
+    a, p, h3{
+        display: none;
+    }
+    img{
+        height: 60px;
+        width:60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+   
+}
 
 .dashboard{
     display: grid;
@@ -79,14 +111,49 @@ box-shadow: 0px 0px 100px 1200px rgba(0,0,0,0.75);
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 13px;
+    display: flex;
+    flex-direction: column;
+  
+    .menu-wrapper{
+       min-height: calc(100vh - 320px);
+
+    }
+    .dashboard-nav__about{
+        display: flex;
+        flex-direction: row;
+        padding:0 15px;
+        justify-content: space-around;
+        align-items: center;
+        height: 140px;
+        min-width: 60px;
+        
+       
+        h3{
+            color:$clr-05;
+        }
+        p{
+            color: $clr-03;
+            font-size: 11px;
+        }
+        img{
+            height: 60px;
+            width:60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+ 
+   
     ul{
         list-style-type: none;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-top:10px;
+       
       
         li{
-           padding:15px;
+           padding:15px 35px;
            display: flex;
            align-items: center;
         
