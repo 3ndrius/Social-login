@@ -27,29 +27,29 @@ export default class Dashboard extends Component {
       <div className="dashboard">
       <aside className="dashboard-nav">
       <ul className="dashboard-nav__list">
-          <li><FontAwesomeIcon icon={faTh} />
+          <li><span className="svg-wrap"><FontAwesomeIcon icon={faTh} /></span>
             <Link to="/dashboard">Dashboard</Link>
           </li>
-          <li><FontAwesomeIcon icon={faUser} />
+          <li><span className="svg-wrap"><FontAwesomeIcon icon={faUser} /></span>
             <Link to="/dashboard/data">User</Link>
           </li>
-          <li><FontAwesomeIcon icon={faTags} />
+          <li><span className="svg-wrap"><FontAwesomeIcon icon={faTags} /></span>
             <Link to="/dashboard/contact">Tags</Link>
           </li>
-          <li><FontAwesomeIcon icon={faFire} />
+          <li><span className="svg-wrap"><FontAwesomeIcon icon={faFire} /></span>
             <Link to="/dashboard/contact">Account</Link>
           </li>
-          <li><FontAwesomeIcon icon={faChartLine} />
+          <li><span className="svg-wrap"><FontAwesomeIcon icon={faChartLine} /></span>
             <Link to="/dashboard/contact">Summary</Link>
           </li>
         </ul >
 
     <hr className="hr"/>
         <ul>
-        <li><FontAwesomeIcon icon={faLayerGroup} />
+        <li><span className="svg-wrap"><FontAwesomeIcon icon={faLayerGroup} /></span>
             <Link to="/dashboard/contact">Layout</Link>
           </li>
-        <li><FontAwesomeIcon icon={faCog} />
+        <li><span className="svg-wrap"><FontAwesomeIcon icon={faCog} /></span>
             <Link to="/dashboard/contact">Settings</Link>
           </li>
         </ul>

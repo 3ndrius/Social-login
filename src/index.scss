@@ -1,20 +1,19 @@
 @import './style/colors.scss';
 @import './style/helpers.scss';
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
+
 a{
     text-decoration: none;
     padding-right: 5px;
     color:$clr-05;
 }
-
 // header
-
 
 .app-header{
     height: 100px;
@@ -47,7 +46,6 @@ a{
         height: auto;
         margin:0 20px;
     }
-  
 }
 .overlay{
     position: fixed;
@@ -71,9 +69,9 @@ box-shadow: 0px 0px 100px 1200px rgba(0,0,0,0.75);
     display: grid;
     background:$clr-02;
     grid-template-columns: 250px 1fr;
-    grid-template-rows: minmax(100vh, 1fr);
+    grid-template-rows: minmax(calc(100vh - 100px), 1fr);
     grid-column-gap: 10px;
-
+    color:$clr-03;
 }
 .dashboard-nav{
     background:$clr-01;
@@ -88,20 +86,32 @@ box-shadow: 0px 0px 100px 1200px rgba(0,0,0,0.75);
         justify-content: center;
       
         li{
-           padding:20px;
+           padding:15px;
            display: flex;
            align-items: center;
+        
+        
+           .svg-wrap{
+               width:35px;
+         
+           }
 
            svg{
                margin-right: 20px;
                font-size: 20px;
                color:$clr-03;
+               
+               
            }
         
         }
-        li:hover{
-            background: $hover-color-light;
+        li:hover svg{
+           color:$clr-04;
             cursor: pointer;
         }
+        li:hover a{
+            color:$clr-04;
+             cursor: pointer;
+         }
     }
 }
