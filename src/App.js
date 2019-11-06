@@ -45,6 +45,7 @@ class AuthContextProvider extends Component {
   };
   render() {
     return (
+      <div className="app">
       <BrowserRouter>
         <AuthContext.Provider value={{ isSignIn: this.state.isSignIn }}>
           <header className="app-header">
@@ -120,6 +121,7 @@ class AuthContextProvider extends Component {
           </Switch>
         </AuthContext.Provider>
       </BrowserRouter>
+      </div>
     );
   }
 }
