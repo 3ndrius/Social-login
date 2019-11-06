@@ -38,37 +38,45 @@ export default class Dashboard extends Component {
         </div>
       <span className="menu-wrapper">
       <ul className="dashboard-nav__list">
-          <li><span className="svg-wrap"><FontAwesomeIcon icon={faTh} /></span>
-            <Link to="/dashboard">Dashboard</Link>
+          <li> <Link to="/dashboard"><span className="svg-wrap"><FontAwesomeIcon icon={faTh} /></span>
+          <span className="title">Dashboard</span></Link>
           </li>
-          <li><span className="svg-wrap"><FontAwesomeIcon icon={faUser} /></span>
-            <Link to="/dashboard/data">User</Link>
+          <li>
+          <Link to="/dashboard/data">
+          <span className="svg-wrap">
+          <FontAwesomeIcon icon={faUser} /></span> <span className="title">User</span>
+            </Link>
           </li>
-          <li><span className="svg-wrap"><FontAwesomeIcon icon={faTags} /></span>
-            <Link to="/dashboard/contact">Tags</Link>
+          <li><Link to="/dashboard/contact">
+            <span className="svg-wrap"><FontAwesomeIcon icon={faTags} /></span>
+            <span className="title">Tags</span></Link>
           </li>
-          <li><span className="svg-wrap"><FontAwesomeIcon icon={faFire} /></span>
-            <Link to="/dashboard/contact">Account</Link>
+          <li><Link to="/dashboard/contact">
+            <span className="svg-wrap"><FontAwesomeIcon icon={faFire} /></span>
+            <span className="title">Account</span></Link>
           </li>
-          <li><span className="svg-wrap"><FontAwesomeIcon icon={faChartLine} /></span>
-            <Link to="/dashboard/contact">Summary</Link>
+          <li> <Link to="/dashboard/contact">
+            <span className="svg-wrap"><FontAwesomeIcon icon={faChartLine} /></span>
+           <span className="title">Summary</span></Link>
           </li>
         </ul >
 
     <hr className="hr"/>
         <ul>
-        <li><span className="svg-wrap"><FontAwesomeIcon icon={faLayerGroup} /></span>
-            <Link to="/dashboard/contact">Layout</Link>
+        <li><Link to="/dashboard/contact">
+          <span className="svg-wrap"><FontAwesomeIcon icon={faLayerGroup} /></span>
+            <span className="title">Layout</span></Link>
           </li>
-        <li><span className="svg-wrap"><FontAwesomeIcon icon={faCog} /></span>
-            <Link to="/dashboard/contact">Settings</Link>
+        <li><Link to="/dashboard/contact">
+          <span className="svg-wrap"><FontAwesomeIcon icon={faCog} /></span>
+           <span className="title">Settings</span></Link>
           </li>
         </ul>
       </span>
 
         <ul>
         <li onClick={() => this.setState({mediaQuery: !this.state.mediaQuery})}><span className="svg-wrap"><FontAwesomeIcon icon={faSlidersH} /></span>
-            <Link to="/dashboard">Toggle menu</Link>
+           <span className="title">Toggle menu</span>
           </li>
         </ul>
       </aside>
