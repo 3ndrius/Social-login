@@ -85,7 +85,7 @@ box-shadow: 0px 0px 100px 1200px rgba(0,0,0,0.75);
     grid-template-rows: minmax(calc(100vh - 100px), 1fr);
     grid-column-gap: 10px;
     color:$clr-03;
-    a, p, h3{
+    .title, p, h3{
         display: none;
     }
     img{
@@ -155,8 +155,12 @@ box-shadow: 0px 0px 100px 1200px rgba(0,0,0,0.75);
         li{
            padding:15px 35px;
            display: flex;
-           align-items: center;
-        
+            align-items: center;
+          
+        a{
+            display: flex;
+            align-items: center;
+        }
         
            .svg-wrap{
                width:35px;
