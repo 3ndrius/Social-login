@@ -9,7 +9,5 @@
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
+### `git clone | cd <folder> | npm i | npm start`
 
